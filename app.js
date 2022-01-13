@@ -4,8 +4,11 @@ const v1=require("./routes/v1")
 const logger=require('./middlewares/logger')
 const morgan=require("morgan")
 const app=express()
-
+const connectDb=require("./config/db")
+const connectDB = require("./config/db")
 dotenv.config({path:"./config/config.env"})
+
+connectDB();
 
 // app.use(logger);
 app.use(morgan('dev'))
